@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 from sqlalchemy import create_engine, text
 
-db_url = f"mysql+pymysql://{db['root']}:{db['12345']}@{db['localhost']}:{db['3306']}/{db['earthquake']}"
-
-engine = create_engine(db_url)
+engine = create_engine(
+    "mysql+pymysql://root:12345@localhost:3306/EARTHQUAKE"
+)
 
 
 st.title("Earrthquake data analysis")
@@ -314,6 +314,7 @@ if st.button("click to view",key = "key28"):
         df = pd.read_sql(query, conn)
         st.dataframe(df)
     
+
 
 
 
