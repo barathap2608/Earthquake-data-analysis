@@ -4,7 +4,8 @@ from sqlalchemy import create_engine, text
 
 db = st.secrets["mysql"]
 
-db_url = f"mysql+pymysql://{db['user']}:{db['password']}@{db['host']}:{db['port']}/{db['database_name']}"
+db_url = (f"mysql+pymysql://{db['user']}:{db['password']}@{db['host']}:{db['port']}"f"/{db['database_name']}?ssl_mode={db['ssl_mode']}")
+
 
 engine = create_engine(db_url)
 
@@ -316,6 +317,7 @@ if st.button("click to view",key = "key28"):
         df = pd.read_sql(query, conn)
         st.dataframe(df)
     
+
 
 
 
