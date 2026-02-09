@@ -3,4 +3,6 @@ pandas
 sqlalchemy
 numpy
 pymysql
+cryptography
+
 
