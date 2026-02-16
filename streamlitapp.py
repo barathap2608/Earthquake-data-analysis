@@ -4,7 +4,7 @@ from sqlalchemy import create_engine, text
 
 
 
-db_url = "mysql+pymysql://root:12345@localhost:3306"f"/earthquake"
+db_url = "mysql+pymysql://root:12345@localhost:3306/earthquake"
 
 
 engine = create_engine(db_url)
@@ -317,6 +317,7 @@ if st.button("click to view",key = "key28"):
         df = pd.read_sql(query, conn)
         st.dataframe(df)
     
+
 
 
 
